@@ -1,11 +1,18 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Image, Dimensions} from 'react-native';
+import {DialogueBox} from "../components/DialogueBox";
+
+const {width, height} = Dimensions.get('window')
 
 const Home = () => {
     return (
-        <View>
-            <Text>Home Screen</Text>
-        </View>
+        <>
+            <View style={{flex: 1, backgroundColor: '#ededed'}}>
+                <Image style={{width: width, height: height/2.5, borderBottomRightRadius: 50, borderBottomLeftRadius: 50}}source={require('/Users/t0g00py/AboutMe/app/assets/galaxy-wallpapers-8.jpg')}/>
+            </View>
+
+            <DialogueBox size={'medium'} elevation={true} position={'center'}/>
+        </>
     )
 };
 
