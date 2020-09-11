@@ -1,18 +1,22 @@
 import React from 'react'
 import {Text, View, StyleSheet, Dimensions} from 'react-native'
+import {HeaderBar} from "./HeaderBar";
 
 const { width, height } = Dimensions.get('window')
 
-export const DialogueBox = ({size, backgroundColor, title, elevation=true, position}) => {
+export const DialogueBox = ({size='medium', backgroundColor='light', title, elevation=true, position='center', round=true}) => {
     return (
         <View style={[
-            styles[size] || styles.medium,
-            styles[position] || styles.center,
+            styles[size],
+            styles[position],
             elevation && styles.elevation,
-            styles.radius,
+            round && styles.radius,
             styles.position
         ]}>
-            <Text>Dialogue box</Text>
+            <HeaderBar color={'light'} size={'small'} rounded={'topRounded'} border={'borderBottom'} headerText={'About Me'} />
+            <View style={{flex: 1}}>
+                <Text>Dialogue box</Text>
+            </View>
         </View>
     )
 }
